@@ -36,7 +36,6 @@ export default function Hero() {
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {/* Note: Change .jpg to .png here if your images are PNGs! */}
           <img
             src={images[currentIndex]}
             alt="Hero background"
@@ -45,9 +44,9 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Typography Overlay (Sits on top of the images) */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-8">
-        <h1 className="text-hero font-serif text-white max-w-5xl leading-[1.1]">
+      {/* Typography Overlay (Safely padded for mobile screens so text stays inside frame) */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6 md:px-12">
+        <h1 className="text-hero font-serif text-white max-w-5xl leading-[1.1] break-words">
           The architecture of a memory.
         </h1>
       </div>
