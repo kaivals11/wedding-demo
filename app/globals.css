@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cinematic-dark: #121212;
+  --color-cinematic-darker: #1A1A1A;
+  --color-cream: #F7F5F0;
+  --color-charcoal: #2A2A2A;
+  --color-champagne: #D4C8B8;
+  --color-border-inactive: #D1D1D1;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cinematic-dark);
+  color: #ffffff;
+  /* This ensures the entire site uses our clean Inter sans-serif */
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Our Custom Design System Classes */
+.font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+.text-hero {
+  font-size: clamp(3rem, 8vw, 8rem);
+}
+
+/* UI Elements */
+.naked-link {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding-bottom: 4px;
+  border-bottom: 0.5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.naked-link:hover {
+  border-color: currentColor;
 }
